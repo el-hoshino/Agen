@@ -7,16 +7,18 @@
 
 import Foundation
 
-final class AmazonLinkUtility {
+public final class AmazonLinkUtility {
         
-    enum LinkStringValidationError: Error, Equatable {
+    public enum LinkStringValidationError: Error, Equatable {
         case linkStringIsNotURL(linkString: String)
         case linkStringHasNoScheme(linkURL: URL)
         case linkIsNotFromAmazon(linkURL: URL)
         case linkIsFromAmazonButHasNoProduct(linkURL: URL)
     }
     
-    func shortenLinkString(of originalLinkString: String) throws -> String {
+    public init() {}
+    
+    public func shortenLinkString(of originalLinkString: String) throws -> String {
         
         guard let url = URL(rawString: originalLinkString) else {
             throw LinkStringValidationError.linkStringIsNotURL(linkString: originalLinkString)
