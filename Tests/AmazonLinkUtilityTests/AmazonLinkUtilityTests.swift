@@ -40,8 +40,4 @@ final class AmazonLinkUtilityTests: XCTestCase {
         
     }
     
-    static var allTests = [
-        ("testValidLinks", testValidLinks),
-    ]
-    
 }

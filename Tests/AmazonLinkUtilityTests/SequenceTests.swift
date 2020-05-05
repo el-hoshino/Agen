@@ -25,8 +25,4 @@ final class SequenceTests: XCTestCase {
         
     }
     
-    static var allTests = [
-        ("testElementsFollowing", testElementsFollowing),
-    ]
-    
 }

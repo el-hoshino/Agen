@@ -21,8 +21,4 @@ final class URLTests: XCTestCase {
         
     }
     
-    static var allTests = [
-        ("testRawStringInit", testRawStringInit),
-        ("testSchemeHostPathInit", testSchemeHostPathInit),
-    ]
 }
