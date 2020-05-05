@@ -1,5 +1,5 @@
 import XCTest
-@testable import AgenLib
+@testable import AmazonLinkUtility
 
 final class URLTests: XCTestCase {
     

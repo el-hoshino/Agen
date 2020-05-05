@@ -13,6 +13,9 @@ let package = Package(
         .library(
             name: "AgenLib",
             targets: ["AgenLib"]),
+        .library(
+            name: "AmazonLinkUtility",
+            targets: ["AmazonLinkUtility"]),
         .executable(
             name: "agen",
             targets: ["Agen"]),
@@ -25,11 +28,17 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
-            name: "AgenLib",
+            name: "AmazonLinkUtility",
             dependencies: []),
+        .target(
+            name: "AgenLib",
+            dependencies: ["AmazonLinkUtility"]),
         .target(
             name: "Agen",
             dependencies: ["AgenLib"]),
+        .testTarget(
+            name: "AmazonLinkUtilityTests",
+            dependencies: ["AmazonLinkUtility"]),
         .testTarget(
             name: "AgenLibTests",
             dependencies: ["AgenLib"]),

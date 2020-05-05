@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import AgenLib
+@testable import AmazonLinkUtility
 
 final class AmazonLinkUtilityTests: XCTestCase {
     
