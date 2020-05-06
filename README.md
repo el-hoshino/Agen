@@ -23,6 +23,7 @@ Agen is a command-line tool for macOS to shorten amazon links
 
 - -h / --help: Help. (This will ignore all other arguments and won't perform any output.)
 - -v / --version: Print version number. (This will ignore all other arguments and won't perform any output.)
+- -nc / --no-copy: Don't copy the result to pasteboard.
 
 ### Tips
 
