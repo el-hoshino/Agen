@@ -1,6 +1,8 @@
 import Cocoa
 import AgenLib
 
+let version = "1.0.1"
+
 let arguments = CommandLine.arguments
 let parser = Parser()
 
@@ -11,7 +13,7 @@ do {
         printHelp()
         
     case .showVersion:
-        printVersion()
+        printVersion(versionString: version)
         
     case .shortenURLString(let result):
         let shortenURLString = result.urlString

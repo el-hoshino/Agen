@@ -14,9 +14,18 @@ final class AmazonLinkUtilityTests: XCTestCase {
         
         let utility = AmazonLinkUtility()
         
-        let originalLinkString = "https://www.amazon.co.jp/「早坂愛は防ぎたい」「生徒会は神ってない」「かぐや様は結婚したい」「かぐや様は祝いたい」/dp/B086ZCTDJ8/ref=sr_1_1?__mk_ja_JP=カタカナ&dchild=1&keywords=かぐや様&qid=1588694541&sr=8-1"
+        typealias TestCase = (original: String, shorten: String)
+        let testCases: [TestCase] = [
+            ("https://www.amazon.co.jp/「早坂愛は防ぎたい」「生徒会は神ってない」「かぐや様は結婚したい」「かぐや様は祝いたい」/dp/B086ZCTDJ8/ref=sr_1_1?__mk_ja_JP=カタカナ&dchild=1&keywords=かぐや様&qid=1588694541&sr=8-1",
+             "https://www.amazon.co.jp/dp/B086ZCTDJ8"),
+            
+            ("https://www.amazon.co.jp/gp/product/B083JL3TFN/ref=ppx_yo_dt_b_d_asin_title_o00?ie=UTF8&psc=1",
+             "https://www.amazon.co.jp/gp/product/B083JL3TFN"),
+        ]
         
-        XCTAssertEqual(try utility.shortenLinkString(of: originalLinkString), "https://www.amazon.co.jp/dp/B086ZCTDJ8")
+        for testCase in testCases {
+            XCTAssertEqual(try utility.shortenLinkString(of: testCase.original), testCase.shorten)
+        }
         
     }
     

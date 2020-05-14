@@ -32,11 +32,11 @@ public final class AmazonLinkUtility {
             throw LinkStringValidationError.linkIsNotFromAmazon(linkURL: url)
         }
         
-        guard let dp = url.pathComponents.element(following: { $0 == "dp" }) else {
+        guard let number = AmazonProductNumber.find(in: url.pathComponents) else {
             throw LinkStringValidationError.linkIsFromAmazonButHasNoProduct(linkURL: url)
         }
         
-        guard let shortenURL = URL(scheme: scheme, host: host, path: ["dp", dp]) else {
+        guard let shortenURL = URL(scheme: scheme, host: host, path: number.pathCompoonents) else {
             throw NSError(domain: "AmazonLinkUtility", code: -1, userInfo: [
                 "Description": "Unknown",
                 "OriginalLinkString": originalLinkString,

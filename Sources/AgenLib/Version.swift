@@ -7,9 +7,9 @@
 
 import Foundation
 
-public func printVersion() {
+public func printVersion(versionString: String) {
     
-    let version = "1.0.0"
+    let version = "Current version: \(versionString)"
     
     print(version)
     
