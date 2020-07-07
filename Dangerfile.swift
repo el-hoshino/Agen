@@ -76,7 +76,7 @@ struct CheckResult {
     
     var markdownTitle: String {
         
-        "## " + title
+        "### " + title
         
     }
     
@@ -534,7 +534,7 @@ if let githubIssue = danger.githubIssue {
 SwiftLint.lint(.modifiedAndCreatedFiles(directory: nil), inline: true)
 
 // Xcode summary warnings check.
-XCodeSummary(filePath: "xcodebuild.json", onlyShowSummaryInDiffFiles: true).report()
+XCodeSummary(filePath: "result.json", onlyShowSummaryInDiffFiles: true).report()
 
 // Xcode test coverage check.
 Coverage.spmCoverage(minimumCoverage: 60)
