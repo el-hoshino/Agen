@@ -486,12 +486,6 @@ private extension String {
         
     }
     
-    func hasAnyPrefix(in prefixes: [String]) -> Bool {
-        
-        return prefixes.contains(where: { hasPrefix($0) })
-        
-    }
-    
 }
 
 private extension Process {
